@@ -10,7 +10,6 @@ class LinkedList {
         this.tail = null;
         this.length = 0;
     }
-
     append(value) {
         let Node = createNode(value);
         let current;
@@ -29,7 +28,6 @@ class LinkedList {
         }
         this.length++;
     }
-
     prepend(value) {
         let Node = createNode(value);
 
@@ -61,7 +59,6 @@ class LinkedList {
         }
     }
 }
-
 
 const ll = new LinkedList();
 
