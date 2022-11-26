@@ -4,7 +4,6 @@ function createNode(value) {
       next: null,
     };
 }
-
 class LinkedList {
     constructor () {
         this.head = null;
@@ -37,14 +36,32 @@ class LinkedList {
         //to arrange
         if (this.head == null) {
             this.head = Node;
-          }
-          else {
+        }
+        else {
             Node.next = this.head;
             this.head = Node;
-          }
+        }
         this.length++;
     }
+    sizeNode() {
+        let size = this.length;
+        return size
+    }
+    headNode() {
+        let firstNode = this.head.value;
+        return firstNode
+    }
+    tailNode() {
+        let lastNode = this.tail.value;
+        return lastNode
+    }
+    atIndex(index) {
+        for (let i=0;i<index;i++) {
+
+        }
+    }
 }
+
 
 const ll = new LinkedList();
 
@@ -56,5 +73,9 @@ console.log(ll.prepend(6));
 console.log(ll.prepend(false));
 console.log(ll.prepend(22));
 console.log(ll.prepend('not ok'));
+console.log(ll.sizeNode());
+console.log(ll.headNode());
+console.log(ll.tailNode());
+console.log(ll.atIndex(4));
 
 console.log(ll);
