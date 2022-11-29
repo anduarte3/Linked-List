@@ -14,9 +14,7 @@ class LinkedList {
         let Node = createNode(value);
         let current;
         
-        if (this.head == null) {
-            this.head = Node;
-        }
+        if (this.head == null) this.head = Node;
         else {
             current = this.head;
 
@@ -31,9 +29,7 @@ class LinkedList {
     prepend(value) {
         let Node = createNode(value);
 
-        if (this.head == null) {
-            this.head = Node;
-        }
+        if (this.head == null) this.head = Node;
         else {
             Node.next = this.head;
             this.head = Node;
@@ -57,11 +53,11 @@ class LinkedList {
         let count = 1;
 
         while (current) {
-          if (count === index) {  // found the element
+          if (count === index) {  
             return current.value;
           }
-          count++;  // increment counter
-          current = current.next;  // move to next node
+          count++;  
+          current = current.next;  
         }
         return -1;
     }
@@ -76,6 +72,29 @@ class LinkedList {
         }
         previous.next = null;
         return this.head
+    }
+    contains(input) {
+        let n = this.head;
+        while (n != null) {
+            if (n.value === input) console.log('true');
+            else console.log('false');
+            n = n.next;
+        }
+    }
+    find(input) {
+        let current = this.head;
+        let count = 1;
+
+        while (current) {
+          if (current.value == input) {  
+            return count;
+          }
+          count++;  
+          current = current.next;  
+        }
+    }
+    toString() {
+    
     }
 }
 
@@ -95,10 +114,20 @@ console.log(ll.tailNode());
 console.log(ll.atIndex(4));
 console.log(ll.atIndex(7));
 console.log(ll.atIndex(2));
+console.log(ll.contains(3));
+console.log(ll.contains('ok'));
+console.log(ll.contains(44));
+console.log(ll.find(false));
+console.log(ll.find('not ok'));
+console.log(ll.find(6));
+console.log(ll.toString());
+console.log(ll.toString());
+console.log(ll.toString());
 console.log(ll.pop());
 console.log(ll.pop());
 console.log(ll.pop());
 console.log(ll.pop());
 console.log(ll.pop());
 console.log(ll.pop());
+
 console.log(ll);
