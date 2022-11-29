@@ -66,7 +66,16 @@ class LinkedList {
         return -1;
     }
     pop() {
-        
+        let previous = this.head;
+
+        if (this.head == null) return this.head
+        if (this.head.next == null) return -1
+
+        while (previous.next.next != null) {
+            previous = previous.next;
+        }
+        previous.next = null;
+        return this.head
     }
 }
 
@@ -86,5 +95,10 @@ console.log(ll.tailNode());
 console.log(ll.atIndex(4));
 console.log(ll.atIndex(7));
 console.log(ll.atIndex(2));
-
+console.log(ll.pop());
+console.log(ll.pop());
+console.log(ll.pop());
+console.log(ll.pop());
+console.log(ll.pop());
+console.log(ll.pop());
 console.log(ll);
