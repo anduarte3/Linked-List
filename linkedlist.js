@@ -31,7 +31,6 @@ class LinkedList {
     prepend(value) {
         let Node = createNode(value);
 
-        //to arrange
         if (this.head == null) {
             this.head = Node;
         }
@@ -54,9 +53,20 @@ class LinkedList {
         return lastNode
     }
     atIndex(index) {
-        for (let i=0;i<index;i++) {
+        let current = this.head;
+        let count = 1;
 
+        while (current) {
+          if (count === index) {  // found the element
+            return current.value;
+          }
+          count++;  // increment counter
+          current = current.next;  // move to next node
         }
+        return -1;
+    }
+    pop() {
+        
     }
 }
 
@@ -74,5 +84,7 @@ console.log(ll.sizeNode());
 console.log(ll.headNode());
 console.log(ll.tailNode());
 console.log(ll.atIndex(4));
+console.log(ll.atIndex(7));
+console.log(ll.atIndex(2));
 
 console.log(ll);
