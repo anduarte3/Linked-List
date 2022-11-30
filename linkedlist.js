@@ -94,40 +94,48 @@ class LinkedList {
         }
     }
     toString() {
-    
+        let list = this.head;
+        let string = '';
+
+        while (list) {
+            string += `${list.value}${list.next ? " -> " : ""}`;
+            list = list.next;
+        }
+        return string
     }
 }
 
 const ll = new LinkedList();
+
+console.log(ll);
 
 console.log(ll.append(3));
 console.log(ll.append(true));
 console.log(ll.append(14));
 console.log(ll.append('ok'));
 console.log(ll.prepend(6));
-console.log(ll.prepend(false));
+console.log(ll.prepend('something'));
 console.log(ll.prepend(22));
 console.log(ll.prepend('not ok'));
-console.log(ll.sizeNode());
-console.log(ll.headNode());
-console.log(ll.tailNode());
-console.log(ll.atIndex(4));
-console.log(ll.atIndex(7));
-console.log(ll.atIndex(2));
-console.log(ll.contains(3));
-console.log(ll.contains('ok'));
-console.log(ll.contains(44));
-console.log(ll.find(false));
-console.log(ll.find('not ok'));
+// console.log(ll.sizeNode());
+// console.log(ll.headNode());
+// console.log(ll.tailNode());
+// console.log(ll.atIndex(4));
+// console.log(ll.atIndex(7));
+// console.log(ll.atIndex(2));
+// console.log(ll.contains(3));
+// console.log(ll.contains('ok'));
+// console.log(ll.contains(44));
+// console.log(ll.find(false));
+// console.log(ll.find('not ok'));
 console.log(ll.find(6));
 console.log(ll.toString());
-console.log(ll.toString());
-console.log(ll.toString());
-console.log(ll.pop());
-console.log(ll.pop());
-console.log(ll.pop());
-console.log(ll.pop());
-console.log(ll.pop());
-console.log(ll.pop());
+// console.log(ll.pop());
+// console.log(ll.pop());
+// console.log(ll.pop());
+// console.log(ll.pop());
+// console.log(ll.pop());
+// console.log(ll.pop());
 
 console.log(ll);
+
